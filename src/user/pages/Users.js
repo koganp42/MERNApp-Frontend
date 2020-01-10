@@ -13,6 +13,7 @@ const Users = () => {
       places: 3
     }
   ];
+  
   return <UsersList items={USERS} />;
 };
 
