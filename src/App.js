@@ -12,7 +12,10 @@ import UserPlaces from "./places/pages/UserPlaces";
 
 const App = () => {
   return (
+    //Router serves to direct route paths on the page
     <Router>
+      {//MainNavigation will be at the top of every page, then the router will direct to the correct page component as directed by the route.
+      }
       <MainNavigation />
       <main>
         <Switch>

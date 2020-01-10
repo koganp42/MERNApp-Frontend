@@ -4,6 +4,7 @@ import Card from "../../shared/components/UIElements/Card";
 import "./PlaceItem.css";
 import Button from "../../shared/components/FormElements/Button";
 
+//The place card that appears on the page "My Places".
 const PlaceItem = props => {
   return (
     <li className="place-item">
