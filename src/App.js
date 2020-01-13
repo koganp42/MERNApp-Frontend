@@ -35,4 +35,7 @@ const App = () => {
   );
 };
 
+require('dotenv').config();
+console.log(process.env.googleMapsKey);
+
 export default App;

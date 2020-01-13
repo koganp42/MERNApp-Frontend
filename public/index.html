@@ -31,7 +31,7 @@
     <!--
       Below are hooks for the backdrop and the drawer.  These hooks allow for the portal to show content outside of where it will be rendered.
     -->
-    <div id='modal-hook'></div>
+    <div id="modal-hook"></div>
     <div id="backdrop-hook"></div>
     <div id="drawer-hook"></div>
     <div id="root"></div>
@@ -45,5 +45,14 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+<script>
+require('dotenv').config();
+console.log(process.env.googleMapsKey);
+</script>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=" + process.env.googleMapsKey
+      async
+      defer
+    ></script>
   </body>
 </html>
