@@ -1,5 +1,6 @@
-import React, { useReducer } from "react";
+import React, { useReducer, useEffect } from "react";
 //use the useReducer hook instead of useState when managing more complicated state.
+//use the useEffect to run some logic when there is a state change.
 import { validate } from "../util/validators";
 
 import "./Input.css";
@@ -28,6 +29,14 @@ const Input = props => {
     isTouched: false,
     isValid: false
   });
+
+  const {id, onInput } = props;
+  const {value, isValid} = inputState;
+
+  useEffect((
+    onInput(id, value, isValid)
+  ), [id, value,isValid,onInput]);
+
   //on change of the input...
   const changeHandler = event => {
     dispatch({
