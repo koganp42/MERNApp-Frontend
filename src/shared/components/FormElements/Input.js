@@ -9,7 +9,7 @@ const inputReducer = (state, action) => {
   switch (action.type) {
     case "CHANGE":
       return {
-        ...state,
+        ...state,//copies the current state.  Lines below will change values of current state.
         value: action.val,
         isValid: validate(action.val, action.validators)
       };
@@ -25,15 +25,15 @@ const inputReducer = (state, action) => {
 
 const Input = props => {
   const [inputState, dispatch] = useReducer(inputReducer, {
-    value: "",
+    value: props.value || "",
     isTouched: false,
-    isValid: false
+    isValid: props.valid || false
   });
 
   const {id, onInput } = props;
   const {value, isValid} = inputState;
 
-  useEffect((
+  useEffect(() =>(
     onInput(id, value, isValid)
   ), [id, value,isValid,onInput]);
 

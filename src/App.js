@@ -9,6 +9,7 @@ import Users from "./user/pages/Users";
 import NewPlace from "./places/pages/NewPlace";
 import MainNavigation from "./shared/components/Navigation/MainNavigation";
 import UserPlaces from "./places/pages/UserPlaces";
+import UpdatePlace from "./places/pages/UpdatePlace";
 
 const App = () => {
   return (
@@ -28,6 +29,9 @@ const App = () => {
           <Route path="/places/new" exact>
             <NewPlace />
           </Route>
+          <Route path="/places/:placeId">
+            <UpdatePlace/>
+          </Route>
           <Redirect to="/" />
         </Switch>
       </main>
@@ -36,6 +40,5 @@ const App = () => {
 };
 
 require('dotenv').config();
-console.log(process.env.googleMapsKey);
 
 export default App;
